@@ -44,6 +44,7 @@ class CatsController < ApplicationController
     if @cat.update(cat_params)
       redirect_to @cat, notice: "ねこを更新しました。"
     else
+      # バリデーションエラー時にはedit.html.erbをrenderする
       render :edit, status: :unprocessable_entity
     end
   end
